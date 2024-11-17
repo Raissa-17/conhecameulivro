@@ -54,21 +54,55 @@
             gap: 20px;
             flex-wrap: wrap;
             width: 100% /* O conteudo vai ocupar todo o espalo */
+            justify-content: center; /* Disponível para todas as telas */
         }
 
         .content img {
-            width: 150px;
-            height: 150px;
+            width: 120px; /* 150px caso de erros ksks*/
+            height: 120px;
             border-radius: 50%;
             flex-shrink: 0; /* A imagem não vai encolher */
         }
 
         .content p {
             flex-grow: 1; /* O texto ocupa o espaço disponível */
-            max-width: 600px; /* Limita a largura do texto */
+            max-width: 400px; /* 600+todas as telas  Limita a largura do texto */
+            text-align: center; /*Alinha o texto no centro da tela*/
         }
 
-                /* Estilo do botão do Wattpad */
+        /* Layout para telas grandes (como desktop) */
+@media (min-width: 768px) {
+    .content {
+        justify-content: space-between; /* Deixa os itens distribuídos na tela */
+    }
+
+    .content img {
+        width: 150px; /* Ajuste o tamanho para telas maiores */
+        height: 150px;
+    }
+
+    .content p {
+        max-width: 600px; /* Limita a largura do texto para telas grandes */
+    }
+}
+
+/* Layout para telas muito grandes (por exemplo, telas widescreen) */
+@media (min-width: 1200px) {
+    .content {
+        gap: 40px; /* Mais espaço entre imagem e texto em telas grandes */
+    }
+
+    .content img {
+        width: 180px; /* Aumenta a imagem em telas muito grandes */
+        height: 180px;
+    }
+
+    .content p {
+        max-width: 800px; /* Limita a largura do texto em telas muito grandes */
+    }
+}
+        
+         /* Estilo do botão do Wattpad */
         .wattpad-link {
             display: inline-block;
             background-color: #ec407a; /* Cor de fundo laranja do Wattpad */
